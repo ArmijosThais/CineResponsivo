@@ -1,0 +1,644 @@
+@charset "utf-8";
+
+/*ESTRUCTURAS*/
+body{
+    width: 80%;
+    margin: 0 auto;
+}
+nav{
+    display: flex;
+    margin-top: 8px;
+    height: 50px;
+    width: 95%;
+}
+header{
+    position: fixed;
+    width: 80%;
+    background-color: #fff;
+    z-index: 4;
+}
+aside{
+    float: left;
+    width: 30%;
+}
+section{
+    display: inline;
+    float: right;
+    width: 65%;
+    height: max-content;
+    margin-left: 5%;
+}
+footer{
+    display: inline;
+    float: left;
+    background: #D9D9D9;
+    width: 100%;
+    height: 250px;
+}
+
+
+/*ESTILOS*/
+button{
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    width: 150px;
+    height: 35px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.259);
+    font-size: 17px;
+}
+ul, li{
+    display: inline;
+    margin: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    color: #192231;
+}
+a:hover{
+    color: #985e6d;
+}
+h1{
+    letter-spacing: 5px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+}
+
+/*Para el header*/
+#registrarse{
+    background: #192231;
+    color: #fff;
+    
+}
+#registrarse:active{
+    background: #010f28;
+    color: #fff;
+}
+#sesion{
+    background: #985e6d;
+    color: #fff;
+}
+#sesion:active{
+    background: #5e3a44;
+    color: rgb(213, 213, 213);
+}
+#buscador{
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+}
+#lupa{
+    width: 40%;
+    margin-top: 13px;
+    margin-left: 13px;
+}
+.menu{
+    display: flex;
+}
+#ham, #menu-check, #foot{
+    display: none;
+}
+.btn{
+    background-color: #985e6d;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.btn:active{
+    background-color: #5e3a44;
+}
+.barra{
+    background-color: #C5BEBE;
+    display: flex;
+    padding: 10px;
+}
+.redes{
+    width: 10%;
+}
+.redes img{
+    margin-left: 5px;
+    margin-top: 10px;
+}
+.buscar{
+    width: 52%;
+    height: 40px;
+    margin-left: 8%;
+    display: flex;
+}
+.botones{
+    width: 30%;
+    text-align: right;
+}
+#logo2{
+    width: 0%;
+    display: none;
+}
+.logo{
+    width: 10%;
+}
+.logo img{
+    float: left;
+    width: 90%;
+    margin-left: 40px;
+    margin-top: 5px;
+}
+.categorias{
+    width: 90%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*Para la presentacion inicial*/
+.presentacion{
+    float: left;
+}
+#btn_peliculas{
+    background: #985e6d;
+    color: #fff;
+    margin-right: 10%;
+}
+#btn_peliculas:active{
+    background: #5e3a44;
+    color: rgb(213, 213, 213);
+}
+#btn_peliculas:hover{
+    border: #5e3a44;
+    color: rgb(213, 213, 213);
+}
+#btn_tarifas{
+    background: none;
+    border: 2px solid #919191;
+    color: #919191;
+}
+#btn_tarifas:active{
+    background: #8989897c;
+    color: rgb(130, 130, 130);
+}
+#btn_tarifas:hover{
+    border:2px solid #192231;
+    color: #192231;
+}
+
+.banner{
+    width: auto;
+    margin-top: 150px;
+}
+.cine{
+    float: left;
+    height: 70px;
+    width: 15%;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+.opciones{
+    float: right;
+    width: 85%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/*Para las peliculas disponibles*/
+.contenido{
+    float: left;
+    width: 100%;
+    height: max-content;
+}
+.galeria-peliculas{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+.imagen-pelicula{
+    width: 19%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+.imagen-pelicula > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: #19223192;
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.hover-galeria img{
+    width: 50px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.hover-galeria p{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+.imagen-pelicula:hover .hover-galeria{
+    transform: scale(1);
+}
+
+/*Seccion de informacion*/
+.info{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 30%;
+    height: max-content;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.259);
+    float: left;
+}
+.datos{
+    margin: 25px auto;
+    width: 85%;
+    display: block;
+}
+.subtitulos{
+    display: block;
+    color: rgb(152, 93, 109);
+}
+
+.parrafo{
+    color: #9F9F9F;
+    font-size: 14px
+
+}
+
+/*Para los horarios*/
+.horarios .dom,.lun,.mar,.mie,.jue,.vie,.sab{
+    display: inline-flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.horarios{
+    margin-top: 40px;
+    margin-bottom: 8px;
+    height: 60px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.259);
+}
+.dias{
+    text-align: center;
+    font-size: 13px;
+}
+
+/*Para las peliculas*/
+.peliculas-ver{
+    margin-bottom: 15px;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.imagen-pelicula-ver{
+    width: 23%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-pelicula-ver > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hover-galeria-ver{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: #985e6d8d;
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hover-galeria-ver img{
+    width: 50px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.hover-galeria-ver p{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+.imagen-pelicula-ver:hover .hover-galeria-ver{
+    transform: scale(1);
+}
+
+/*Para el Footer*/
+.logo-footer{
+    margin-top: 45px;
+    margin-left: 75px;
+    width: 15%;
+    float: left;
+}
+.social-redes{
+    display: inline;
+    float: right;
+    margin-top: 35px;
+    margin-right: 5%;
+}
+.fb,.ig,.tw{
+    display: block;
+    width: 175%;
+    margin-top: 25px;
+}
+.informacion, .contactanos{
+    display: inline;
+    float: left;
+    margin-top: 20px;
+    margin-left: 15%;
+    font-size: 18px;
+    line-height: 1px;
+}
+
+/*RESPONSIVE*/
+@media only screen and (max-width:1395px){
+    #registrarse, #sesion{
+        width: 45%;
+    }
+    button{
+        height: 30px;
+        font-size: 12px;
+    }
+    .buscar{
+        width: 52%;
+        margin-left: 5%;
+    }
+    .informacion, .contactanos{
+        margin-left: 12%;
+        font-size: 15px;
+        line-height: 1px;
+    }
+    .fb,.ig,.tw{
+        margin-top: 15px;
+    }
+    .horarios .dom,.lun,.mar,.mie,.jue,.vie,.sab{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .horarios{
+        height: 50px;
+    }
+    .dias{
+        font-size: 13px;
+    }
+    .sab{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:1080px){
+    body, header{
+        width: 85%;
+    }
+    #registrarse,#sobra1,.vie{
+        display: none;
+    }
+    #sesion{
+        width: 90%;
+    }
+    .botones{
+        width: 20%;
+    }
+    .buscar{
+        width: 55%;
+    }
+    .redes{
+        width: 15%;
+    }
+    .informacion, .contactanos{
+        margin-left: 10%;
+        font-size: 14px;
+    }
+    .fb,.ig,.tw{
+        width: 160%;
+        margin-top: 15px;
+    }
+    .cine{
+        width: 20%;
+    }
+    .opciones{
+        width: 80%;
+    }
+    .imagen-pelicula{
+        width: 24%;
+    }
+    .imagen-pelicula-ver{
+        width: 30%;
+    }
+    .dias{
+        font-size: 12px;
+    }
+}
+
+/*tablet*/
+@media only screen and (max-width:768px){
+    body, header{
+        width: 90%;
+    }
+    header{
+        position: absolute;
+    }
+    .logo img{
+        margin-left: 0;
+    }
+    #logo2{
+        display: inline;
+        width: 20%;
+        height: fit-content;
+    }
+    #logo2 img{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #menu-check:not(:checked) ~ nav {
+        display: none;
+    }
+    #menu-check:checked ~ nav {
+        display: inline;
+    }
+    #ham{
+        display: block;
+        width: 5%;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        z-index: 9999;
+    }
+    #menu-cerrar{
+        display: none;
+    }
+    #menu-check:checked ~ label #menu-abrir{
+        display: none;
+    }
+    #menu-check:checked ~ label #menu-cerrar{
+        display: block;
+        position: fixed;
+        color: #fff;
+        font-size: 30px;
+    }
+    nav{
+        position: fixed;
+        background-color: #192231;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 45%;
+        margin-top: 0%;
+        padding-top: 0.5em;
+        padding-left: 1.5em;
+        z-index: 5;
+    }
+    nav .foot{
+        display: none;
+    }
+    nav, nav ul, nav ul li{
+        display: block;
+        text-align: left;
+    }
+    nav ul a{
+        color: #fff;
+    }
+    
+    section{
+        width: 100%;
+    }
+    .info, #sesion, #sobra2{
+        display: none;
+        width: 0%;
+    }
+    .redes{
+        width: 25%;
+    }
+    .buscar{
+        width: 75%;
+        margin-left: 8%;
+    }
+    .logo{
+        width: 20%;
+        height: 10%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .logo img{
+        width: 85px;
+    }
+    button{
+        width: 100px;
+    }
+    .cine{
+        width: 35%;
+    }
+    h1{
+        font-size: 23px;
+    }
+    .opciones{
+        width: 65%;
+    }
+    .imagen-pelicula{
+        width: 32%;
+    }
+    .horarios{
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .dias{
+        font-size: 10px;
+    }
+    footer{
+        height:150px;
+    }
+    .logo-footer{
+        margin-left: 25px;
+    }
+    .informacion, .contactanos{
+        margin-left: 5%;
+        font-size: 10px;
+        line-height: 1px;
+    }
+    .fb,.ig,.tw{
+        margin-top: 5px;
+    }
+}
+
+/*Movil*/
+@media only screen and (max-width: 460px){
+    body, header{
+        width: 95%;
+    }
+    nav{
+        width: 50%;
+    }
+    nav #foot{
+        display: inline;
+    }
+    nav #foot img{
+        width: 23%;
+    }
+    nav ul a{
+        font-size: 0.9em;
+    }
+    footer, .botones, .jue{
+        display: none;
+    }
+    .redes{
+        width: 35%;
+    }
+    .buscar{
+        width: 70%;
+        margin-left: 8%;
+    }
+    .cine{
+        width: 100%;
+        text-align: center;
+        margin: 0%;
+    }
+    .opciones{
+        width: 100%;
+        margin-top: 0%;
+    }
+    .horarios{
+        width: fit-content;
+        margin-top: 10px;
+    }
+    .dias{
+        font-size: 8px;
+    }
+    .imagen-pelicula-ver{
+        width: 47%;
+    }
+}
